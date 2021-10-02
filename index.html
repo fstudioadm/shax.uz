@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style media="screen">
+            .sinf-2b {
+                color: blue;
+            }
+            .container-piramid {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .p-row {
+                display: flex;
+                justify-content: center;
+                height: 1.83rem;
+            }
+            .aylana {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid darkblue;
+                background-color: Azure;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 2rem;
+            }
+            .raqam {
+                vertical-align: middle;
+            }
+            .pSon {
+                height: 100%;
+                transform: translateY(-2px);
+            }
+            input {
+                width: 1.5rem;
+                border: none;
+                text-align: center;
+                font-size: 0.65rem;
+                background-color: transparent;
+                border: 0px solid;
+            }
+            textarea:focus, input:focus {
+                outline: none;
+            }
+            .my-buttom {
+                margin-top: 1rem;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1 class="sinf-2b">Пирамидали сонларни ечиш</h1>
+        <div class="container-piramid">
+            <div class="p-row">
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+            </div>
+            <div class="p-row">
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+            </div>
+            <div class="p-row">
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+            </div>
+            <div class="p-row">
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+            </div>
+            <div class="p-row">
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+            </div>
+            <div class="p-row">
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" maxlength="4" onchange="myF(this.value)"></span></div>
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+                <div class="aylana"><span class="raqam"><input class="pSon" type="text" name="" value="" maxlength="4" onchange="myF(this.value)"></span></div>
+            </div>
+        </div>
+        <button class="my-buttom" type="button" name="button">Javobni yuborish</button>
+        <button onclick="buttonNewQuestion()" class="my-buttom" type="button" name="button">Yangi savol</button>
+
+        <div id="root" class="container-piramid">
+
+        </div>
+
+        <script type="text/javascript">
+            const rowCount = 8;
+            const elRoot = document.getElementById("root");
+            let divCount = 1;
+            for (let i = 0; i < rowCount; i++) {
+                let tmp;
+                for (let j = 0; j < divCount; j++) {
+                    let divNew = document.createElement("div");
+                    let spanNew = document.createElement("span");
+                    let inputNew = document.createElement("input");
+                    let conNew = document.createTextNode(i + 1);
+                    divNew.setAttribute("class", "aylana");
+                    spanNew.setAttribute("class", "raqam");
+                    inputNew.setAttribute("class", "pSon");
+                    inputNew.setAttribute("type", "text");
+                    inputNew.setAttribute("maxlength", "4");
+                    spanNew.appendChild(inputNew);
+                    divNew.appendChild(spanNew);
+                    tmp = divNew;
+                }
+                divCount++;
+                // if (divCount)
+                let rowNew = document.createElement("div");
+                rowNew.setAttribute("class", "p-row");
+                rowNew.appendChild(tmp);
+                elRoot.appendChild(rowNew);
+            }
+
+            // function myF(val) {
+            //     console.log(document.getElementsByClassName("pSon")[0].value);
+            //     alert("The input value has changed. The new value is: " + val);
+            // }
+
+            function buttonNewQuestion() {
+                const max = 100;
+                for (let i=0; i<21; i++) {
+                    let n = Math.floor(Math.random() * max);
+                    let m = Math.floor(Math.random() * 2);
+                    if (m===1) {
+                        document.getElementsByClassName("pSon")[i].value = n;
+                    } else {
+                        document.getElementsByClassName("pSon")[i].value = "";
+                    }
+
+                }
+            }
+        </script>
+    </body>
+</html>
