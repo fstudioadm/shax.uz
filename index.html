@@ -96,7 +96,7 @@
         </div>
 
         <script type="text/javascript">
-            const rowCount = 8;
+            const rowCount = 3;
             const elRoot = document.getElementById("root");
             for (let i = 0; i < rowCount; i++) {
                 let rowNew = document.createElement("div");
@@ -112,6 +112,8 @@
                     inputNew.setAttribute("class", "pSon");
                     inputNew.setAttribute("type", "text");
                     inputNew.setAttribute("maxlength", "4");
+                    // inputNew.onchange = function() {myF(this.value)};
+                    inputNew.addEventListener("change", myF2);
                     spanNew.appendChild(inputNew);
                     divNew.appendChild(spanNew);
                     tmp = divNew;
@@ -120,14 +122,19 @@
                 }
             }
 
-            // function myF(val) {
-            //     console.log(document.getElementsByClassName("pSon")[0].value);
-            //     alert("The input value has changed. The new value is: " + val);
-            // }
+            function myF(val) {
+                // console.log(document.getElementsByClassName("pSon")[0].value);
+                console.log(val);
+                // alert("The input value has changed. The new value is: " + val);
+            }
+
+            function myF2(e) {
+                console.log(e.target.value);
+            }
 
             function buttonNewQuestion() {
                 const max = 100;
-                for (let i=0; i<21; i++) {
+                for (let i=0; i<121; i++) {
                     let n = Math.floor(Math.random() * max);
                     let m = Math.floor(Math.random() * 2);
                     if (m===1) {
