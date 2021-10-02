@@ -98,10 +98,11 @@
         <script type="text/javascript">
             const rowCount = 8;
             const elRoot = document.getElementById("root");
-            let divCount = 1;
             for (let i = 0; i < rowCount; i++) {
+                let rowNew = document.createElement("div");
+                rowNew.setAttribute("class", "p-row");
                 let tmp;
-                for (let j = 0; j < divCount; j++) {
+                for (let j = 0; j < i + 1; j++) {
                     let divNew = document.createElement("div");
                     let spanNew = document.createElement("span");
                     let inputNew = document.createElement("input");
@@ -114,13 +115,9 @@
                     spanNew.appendChild(inputNew);
                     divNew.appendChild(spanNew);
                     tmp = divNew;
+                    rowNew.appendChild(tmp);
+                    elRoot.appendChild(rowNew);
                 }
-                divCount++;
-                // if (divCount) +
-                let rowNew = document.createElement("div");
-                rowNew.setAttribute("class", "p-row");
-                rowNew.appendChild(tmp);
-                elRoot.appendChild(rowNew);
             }
 
             // function myF(val) {
